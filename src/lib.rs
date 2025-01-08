@@ -13,6 +13,9 @@ pub fn establish_connection() -> PgConnection {
     PgConnection::establish(&database_url)
         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
 }
+
+
+
 pub fn create_post(conn: &mut PgConnection, title: &str, body: &str) -> Post {
     use crate::schema::posts;
 
